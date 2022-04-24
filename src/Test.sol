@@ -159,7 +159,7 @@ abstract contract Test is DSTest {
         assertTrue(!data, err);
     }
 
-    function assertEq(bool a, bool b) internal {
+    function assertEq(bool a, bool b) internal virtual {
         if (a != b) {
             emit log                ("Error: a == b not satisfied [bool]");
             emit log_named_string   ("  Expected", b ? "true" : "false");
@@ -168,7 +168,7 @@ abstract contract Test is DSTest {
         }
     }
 
-    function assertEq(bool a, bool b, string memory err) internal {
+    function assertEq(bool a, bool b, string memory err) internal virtual {
         if (a != b) {
             emit log_named_string("Error", err);
             emit log_named_string("  Expected", b ? "true" : "false");
@@ -200,7 +200,7 @@ abstract contract Test is DSTest {
         uint256 b,
         uint256 maxDelta
     ) internal virtual {
-        uint256 delta = a > b ? a - b : b - a;
+        uint256 delta = deltaMaths.getDelta(a, b);
 
         if (delta > maxDelta) {
             emit log            ("Error: a ~= b not satisfied [uint]");
@@ -218,7 +218,7 @@ abstract contract Test is DSTest {
         uint256 maxDelta,
         string memory err
     ) internal virtual {
-        uint256 delta = a > b ? a - b : b - a;
+        uint256 delta = deltaMaths.getDelta(a, b);
 
         if (delta > maxDelta) {
             emit log_named_string   ("Error", err);
@@ -233,16 +233,16 @@ abstract contract Test is DSTest {
     function assertApproxEqAbs(
         int256 a,
         int256 b,
-        int256 maxDelta
+        uint256 maxDelta
     ) internal virtual {
-        int256 delta = a > b ? a - b : b - a;
+        uint256 delta = deltaMaths.getDelta(a, b);
 
         if (delta > maxDelta) {
             emit log            ("Error: a ~= b not satisfied [int]");
             emit log_named_int  ("  Expected", b);
             emit log_named_int  ("    Actual", a);
-            emit log_named_int  (" Max Delta", maxDelta);
-            emit log_named_int  ("     Delta", delta);
+            emit log_named_uint (" Max Delta", maxDelta);
+            emit log_named_uint ("     Delta", delta);
             fail();
         }
     }
@@ -250,17 +250,17 @@ abstract contract Test is DSTest {
     function assertApproxEqAbs(
         int256 a,
         int256 b,
-        int256 maxDelta,
+        uint256 maxDelta,
         string memory err
     ) internal virtual {
-        int256 delta = a > b ? a - b : b - a;
+        uint256 delta = deltaMaths.getDelta(a, b);
 
         if (delta > maxDelta) {
             emit log_named_string   ("Error", err);
             emit log_named_int      ("  Expected", b);
             emit log_named_int      ("    Actual", a);
-            emit log_named_int      (" Max Delta", maxDelta);
-            emit log_named_int      ("     Delta", delta);
+            emit log_named_uint     (" Max Delta", maxDelta);
+            emit log_named_uint     ("     Delta", delta);
             fail();
         }
     }
@@ -272,7 +272,7 @@ abstract contract Test is DSTest {
     ) internal virtual {
         if (b == 0) return assertEq(a, b); // If the expected is 0, actual must be too.
 
-        uint256 percentDelta = ((a > b ? a - b : b - a) * 1e18) / b;
+        uint256 percentDelta = deltaMaths.getPercentDelta(a, b);
 
         if (percentDelta > maxPercentDelta) {
             emit log                    ("Error: a ~= b not satisfied [uint]");
@@ -292,7 +292,7 @@ abstract contract Test is DSTest {
     ) internal virtual {
         if (b == 0) return assertEq(a, b); // If the expected is 0, actual must be too.
 
-        uint256 percentDelta = ((a > b ? a - b : b - a) * 1e18) / b;
+        uint256 percentDelta = deltaMaths.getPercentDelta(a, b);
 
         if (percentDelta > maxPercentDelta) {
             emit log_named_string       ("Error", err);
@@ -307,18 +307,18 @@ abstract contract Test is DSTest {
     function assertApproxEqRel(
         int256 a,
         int256 b,
-        int256 maxPercentDelta // An 18 decimal fixed point number, where 1e18 == 100%
+        uint256 maxPercentDelta
     ) internal virtual {
         if (b == 0) return assertEq(a, b); // If the expected is 0, actual must be too.
 
-        int256 percentDelta = ((a > b ? a - b : b - a) * 1e18) / b;
+        uint256 percentDelta = deltaMaths.getPercentDelta(a, b);
 
         if (percentDelta > maxPercentDelta) {
-            emit log                   ("Error: a ~= b not satisfied [uint]");
+            emit log                   ("Error: a ~= b not satisfied [int]");
             emit log_named_int         ("    Expected", b);
             emit log_named_int         ("      Actual", a);
-            emit log_named_decimal_int (" Max % Delta", maxPercentDelta, 18);
-            emit log_named_decimal_int ("     % Delta", percentDelta, 18);
+            emit log_named_decimal_uint(" Max % Delta", maxPercentDelta, 18);
+            emit log_named_decimal_uint("     % Delta", percentDelta, 18);
             fail();
         }
     }
@@ -326,19 +326,19 @@ abstract contract Test is DSTest {
     function assertApproxEqRel(
         int256 a,
         int256 b,
-        int256 maxPercentDelta, // An 18 decimal fixed point number, where 1e18 == 100%
+        uint256 maxPercentDelta,
         string memory err
     ) internal virtual {
         if (b == 0) return assertEq(a, b); // If the expected is 0, actual must be too.
 
-        int256 percentDelta = ((a > b ? a - b : b - a) * 1e18) / b;
+        uint256 percentDelta = deltaMaths.getPercentDelta(a, b);
 
         if (percentDelta > maxPercentDelta) {
             emit log_named_string      ("Error", err);
             emit log_named_int         ("    Expected", b);
             emit log_named_int         ("      Actual", a);
-            emit log_named_decimal_int (" Max % Delta", maxPercentDelta, 18);
-            emit log_named_decimal_int ("     % Delta", percentDelta, 18);
+            emit log_named_decimal_uint(" Max % Delta", maxPercentDelta, 18);
+            emit log_named_decimal_uint("     % Delta", percentDelta, 18);
             fail();
         }
     }
@@ -578,5 +578,86 @@ library stdStorage {
         }
 
         return result;
+    }
+}
+
+/*//////////////////////////////////////////////////////////////////////////
+                                DELTA MATHS
+//////////////////////////////////////////////////////////////////////////*/
+
+library deltaMaths {
+    function getDelta(uint256 a, uint256 b) public view returns (uint256) {
+        return a > b
+            ? a - b
+            : b - a;
+    }
+
+    function getDelta(int256 a, int256 b) public view returns (uint256) {
+        console.logInt(a);
+        console.logInt(b);
+        uint256 adjustedA;
+        uint256 adjustedB;
+
+        if (a >= 0 && b >= 0) {
+            return getDelta(uint256(a), uint256(b));
+        }
+        else if (a >= 0 && b < 0) {
+            if (b == type(int256).min) {
+                adjustedB = (type(uint256).max >> 1) + 1;
+            } else {
+                adjustedB = uint256(-b) + uint256(a);
+            }
+
+            return getDelta(0, uint256(a)) + adjustedB;
+        }
+        else if (a < 0 && b >= 0) {
+            if (a == type(int256).min) {
+                adjustedA = (type(uint256).max >> 1) + 1;
+            } else {
+                adjustedA = uint256(-a) + uint256(b);
+            }
+
+            console.logInt(type(int256).min);
+            console.logInt(type(int256).max);
+            console.log(type(uint256).max >> 1);
+            console.log((type(uint256).max >> 1) + 1);
+            console.log(adjustedA);
+            console.log(adjustedB);
+
+            return getDelta(0, uint256(b)) + adjustedA;
+        }
+        else if (a < 0 && b < 0) {
+            if (a == type(int256).min) {
+                adjustedA = (type(uint256).max >> 1) + 1;
+            } else {
+                adjustedA = uint256(-a);
+            }
+            if (b == type(int256).min) {
+                adjustedB = (type(uint256).max >> 1) + 1;
+            } else {
+                adjustedB = uint256(-b);
+            }
+
+            return getDelta(adjustedA, adjustedB);
+        }
+
+        return adjustedA > adjustedB
+            ? adjustedA - adjustedB
+            : adjustedB - adjustedA;
+    }
+
+    function getPercentDelta(uint256 a, uint256 b) public view returns (uint256) {
+        uint256 delta = getDelta(a, b);
+
+        return delta * 1e18 / b;
+    }
+
+    function getPercentDelta(int256 a, int256 b) public view returns (uint256) {
+        uint256 delta = getDelta(a, b);
+        uint256 absB = b > 0
+            ? uint256(b)
+            : uint256(-b);
+
+        return delta * 1e18 / absB;
     }
 }
