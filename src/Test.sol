@@ -586,73 +586,37 @@ library stdStorage {
 //////////////////////////////////////////////////////////////////////////*/
 
 library deltaMaths {
-    function getDelta(uint256 a, uint256 b) public view returns (uint256) {
+    function getDelta(uint256 a, uint256 b) public pure returns (uint256) {
         return a > b
             ? a - b
             : b - a;
     }
 
-    function getDelta(int256 a, int256 b) public view returns (uint256) {
-        console.logInt(a);
-        console.logInt(b);
-        uint256 adjustedA;
-        uint256 adjustedB;
-
+    function getDelta(int256 a, int256 b) public pure returns (uint256) {
         if (a >= 0 && b >= 0) {
             return getDelta(uint256(a), uint256(b));
         }
-        else if (a >= 0 && b < 0) {
-            if (b == type(int256).min) {
-                adjustedB = (type(uint256).max >> 1) + 1;
-            } else {
-                adjustedB = uint256(-b) + uint256(a);
-            }
-
-            return getDelta(0, uint256(a)) + adjustedB;
+        else if (a >= 0 && b <= 0) {
+            if (b == type(int256).min) return uint256(a) + uint256(type(int256).max) + 1;
+            return uint256(a) + uint256(-b);
         }
-        else if (a < 0 && b >= 0) {
-            if (a == type(int256).min) {
-                adjustedA = (type(uint256).max >> 1) + 1;
-            } else {
-                adjustedA = uint256(-a) + uint256(b);
-            }
-
-            console.logInt(type(int256).min);
-            console.logInt(type(int256).max);
-            console.log(type(uint256).max >> 1);
-            console.log((type(uint256).max >> 1) + 1);
-            console.log(adjustedA);
-            console.log(adjustedB);
-
-            return getDelta(0, uint256(b)) + adjustedA;
+        else if (a <= 0 && b >= 0) {
+            if (a == type(int256).min) return uint256(b) + uint256(type(int256).max) + 1; 
+            return uint256(-a) + uint256(b);
         }
-        else if (a < 0 && b < 0) {
-            if (a == type(int256).min) {
-                adjustedA = (type(uint256).max >> 1) + 1;
-            } else {
-                adjustedA = uint256(-a);
-            }
-            if (b == type(int256).min) {
-                adjustedB = (type(uint256).max >> 1) + 1;
-            } else {
-                adjustedB = uint256(-b);
-            }
-
-            return getDelta(adjustedA, adjustedB);
-        }
-
-        return adjustedA > adjustedB
-            ? adjustedA - adjustedB
-            : adjustedB - adjustedA;
+        
+        // else must be (a <= 0 && b <= 0)
+        return getDelta(a==type(int256).min?uint256(type(int256).max)+1:uint256(-a), 
+                        b==type(int256).min?uint256(type(int256).max)+1:uint256(-b));
     }
 
-    function getPercentDelta(uint256 a, uint256 b) public view returns (uint256) {
+    function getPercentDelta(uint256 a, uint256 b) public pure returns (uint256) {
         uint256 delta = getDelta(a, b);
 
         return delta * 1e18 / b;
     }
 
-    function getPercentDelta(int256 a, int256 b) public view returns (uint256) {
+    function getPercentDelta(int256 a, int256 b) public pure returns (uint256) {
         uint256 delta = getDelta(a, b);
         uint256 absB = b > 0
             ? uint256(b)
