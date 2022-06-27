@@ -1543,124 +1543,248 @@ library console2 {
         _sendLogPayload(abi.encodeWithSignature("log(string,int8)", p0, p1));
     }
 
+    function log(string memory p0, int8[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int8[])", p0, p1));
+    }
+
     function log(string memory p0, int16 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int16)", p0, p1));
+    }
+
+    function log(string memory p0, int16[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int16[])", p0, p1));
     }
 
     function log(string memory p0, int24 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int24)", p0, p1));
     }
 
+    function log(string memory p0, int24[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int24[])", p0, p1));
+    }
+
     function log(string memory p0, int32 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int32)", p0, p1));
+    }
+
+    function log(string memory p0, int32[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int32[])", p0, p1));
     }
 
     function log(string memory p0, int40 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int40)", p0, p1));
     }
 
+    function log(string memory p0, int40[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int40[])", p0, p1));
+    }
+
     function log(string memory p0, int48 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int48)", p0, p1));
+    }
+
+    function log(string memory p0, int48[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int48[])", p0, p1));
     }
 
     function log(string memory p0, int56 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int56)", p0, p1));
     }
 
+    function log(string memory p0, int56[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int56[])", p0, p1));
+    }
+
     function log(string memory p0, int64 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int64)", p0, p1));
+    }
+
+    function log(string memory p0, int64[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int64[])", p0, p1));
     }
 
     function log(string memory p0, int72 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int72)", p0, p1));
     }
 
+    function log(string memory p0, int72[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int72[])", p0, p1));
+    }
+
     function log(string memory p0, int80 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int80)", p0, p1));
+    }
+
+    function log(string memory p0, int80[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int80[])", p0, p1));
     }
 
     function log(string memory p0, int88 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int88)", p0, p1));
     }
 
+    function log(string memory p0, int88[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int88[])", p0, p1));
+    }
+
     function log(string memory p0, int96 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int96)", p0, p1));
+    }
+
+    function log(string memory p0, int96[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int96[])", p0, p1));
     }
 
     function log(string memory p0, int104 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int104)", p0, p1));
     }
 
+    function log(string memory p0, int104[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int104[])", p0, p1));
+    }
+
     function log(string memory p0, int112 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int112)", p0, p1));
+    }
+
+    function log(string memory p0, int112[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int112[])", p0, p1));
     }
 
     function log(string memory p0, int120 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int120)", p0, p1));
     }
 
+    function log(string memory p0, int120[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int120[])", p0, p1));
+    }
+
     function log(string memory p0, int128 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int128)", p0, p1));
+    }
+
+    function log(string memory p0, int128[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int128[])", p0, p1));
     }
 
     function log(string memory p0, int136 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int136)", p0, p1));
     }
 
+    function log(string memory p0, int136[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int136[])", p0, p1));
+    }
+
     function log(string memory p0, int144 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int144)", p0, p1));
+    }
+
+    function log(string memory p0, int144[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int144[])", p0, p1));
     }
 
     function log(string memory p0, int152 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int152)", p0, p1));
     }
 
+    function log(string memory p0, int152[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int152[])", p0, p1));
+    }
+
     function log(string memory p0, int160 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int160)", p0, p1));
+    }
+
+    function log(string memory p0, int160[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int160[])", p0, p1));
     }
 
     function log(string memory p0, int168 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int168)", p0, p1));
     }
 
+    function log(string memory p0, int168[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int168[])", p0, p1));
+    }
+
     function log(string memory p0, int176 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int176)", p0, p1));
+    }
+
+    function log(string memory p0, int176[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int176[])", p0, p1));
     }
 
     function log(string memory p0, int184 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int184)", p0, p1));
     }
 
+    function log(string memory p0, int184[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int184[])", p0, p1));
+    }
+
     function log(string memory p0, int192 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int192)", p0, p1));
+    }
+
+    function log(string memory p0, int192[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int192[])", p0, p1));
     }
 
     function log(string memory p0, int200 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int200)", p0, p1));
     }
 
+    function log(string memory p0, int200[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int200[])", p0, p1));
+    }
+
     function log(string memory p0, int208 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int208)", p0, p1));
+    }
+
+    function log(string memory p0, int208[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int208[])", p0, p1));
     }
 
     function log(string memory p0, int216 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int216)", p0, p1));
     }
 
+    function log(string memory p0, int216[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int216[])", p0, p1));
+    }
+
     function log(string memory p0, int224 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int224)", p0, p1));
+    }
+
+    function log(string memory p0, int224[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int224[])", p0, p1));
     }
 
     function log(string memory p0, int232 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int232)", p0, p1));
     }
 
+    function log(string memory p0, int232[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int232[])", p0, p1));
+    }
+
     function log(string memory p0, int240 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int240)", p0, p1));
     }
 
+    function log(string memory p0, int240[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int240[])", p0, p1));
+    }
+
     function log(string memory p0, int248 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,int248)", p0, p1));
+    }
+
+    function log(string memory p0, int248[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,int248[])", p0, p1));
     }
 
     // nb: (string,int256) already covered
@@ -1673,124 +1797,248 @@ library console2 {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint8)", p0, p1));
     }
 
+    function log(string memory p0, uint8[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint8[])", p0, p1));
+    }
+
     function log(string memory p0, uint16 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint16)", p0, p1));
+    }
+
+    function log(string memory p0, uint16[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint16[])", p0, p1));
     }
 
     function log(string memory p0, uint24 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint24)", p0, p1));
     }
 
+    function log(string memory p0, uint24[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint24[])", p0, p1));
+    }
+
     function log(string memory p0, uint32 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint32)", p0, p1));
+    }
+
+    function log(string memory p0, uint32[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint32[])", p0, p1));
     }
 
     function log(string memory p0, uint40 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint40)", p0, p1));
     }
 
+    function log(string memory p0, uint40[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint40[])", p0, p1));
+    }
+
     function log(string memory p0, uint48 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint48)", p0, p1));
+    }
+
+    function log(string memory p0, uint48[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint48[])", p0, p1));
     }
 
     function log(string memory p0, uint56 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint56)", p0, p1));
     }
 
+    function log(string memory p0, uint56[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint56[])", p0, p1));
+    }
+
     function log(string memory p0, uint64 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint64)", p0, p1));
+    }
+
+    function log(string memory p0, uint64[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint64[])", p0, p1));
     }
 
     function log(string memory p0, uint72 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint72)", p0, p1));
     }
 
+    function log(string memory p0, uint72[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint72[])", p0, p1));
+    }
+
     function log(string memory p0, uint80 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint80)", p0, p1));
+    }
+
+    function log(string memory p0, uint80[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint80[])", p0, p1));
     }
 
     function log(string memory p0, uint88 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint88)", p0, p1));
     }
 
+    function log(string memory p0, uint88[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint88[])", p0, p1));
+    }
+
     function log(string memory p0, uint96 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint96)", p0, p1));
+    }
+
+    function log(string memory p0, uint96[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint96[])", p0, p1));
     }
 
     function log(string memory p0, uint104 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint104)", p0, p1));
     }
 
+    function log(string memory p0, uint104[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint104[])", p0, p1));
+    }
+
     function log(string memory p0, uint112 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint112)", p0, p1));
+    }
+
+    function log(string memory p0, uint112[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint112[])", p0, p1));
     }
 
     function log(string memory p0, uint120 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint120)", p0, p1));
     }
 
+    function log(string memory p0, uint120[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint120[])", p0, p1));
+    }
+
     function log(string memory p0, uint128 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint128)", p0, p1));
+    }
+
+    function log(string memory p0, uint128[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint128[])", p0, p1));
     }
 
     function log(string memory p0, uint136 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint136)", p0, p1));
     }
 
+    function log(string memory p0, uint136[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint136[])", p0, p1));
+    }
+
     function log(string memory p0, uint144 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint144)", p0, p1));
+    }
+
+    function log(string memory p0, uint144[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint144[])", p0, p1));
     }
 
     function log(string memory p0, uint152 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint152)", p0, p1));
     }
 
+    function log(string memory p0, uint152[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint152[])", p0, p1));
+    }
+
     function log(string memory p0, uint160 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint160)", p0, p1));
+    }
+
+    function log(string memory p0, uint160[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint160[])", p0, p1));
     }
 
     function log(string memory p0, uint168 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint168)", p0, p1));
     }
 
+    function log(string memory p0, uint168[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint168[])", p0, p1));
+    }
+
     function log(string memory p0, uint176 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint176)", p0, p1));
+    }
+
+    function log(string memory p0, uint176[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint176[])", p0, p1));
     }
 
     function log(string memory p0, uint184 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint184)", p0, p1));
     }
 
+    function log(string memory p0, uint184[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint184[])", p0, p1));
+    }
+
     function log(string memory p0, uint192 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint192)", p0, p1));
+    }
+
+    function log(string memory p0, uint192[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint192[])", p0, p1));
     }
 
     function log(string memory p0, uint200 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint200)", p0, p1));
     }
 
+    function log(string memory p0, uint200[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint200[])", p0, p1));
+    }
+
     function log(string memory p0, uint208 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint208)", p0, p1));
+    }
+
+    function log(string memory p0, uint208[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint208[])", p0, p1));
     }
 
     function log(string memory p0, uint216 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint216)", p0, p1));
     }
 
+    function log(string memory p0, uint216[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint216[])", p0, p1));
+    }
+
     function log(string memory p0, uint224 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint224)", p0, p1));
+    }
+
+    function log(string memory p0, uint224[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint224[])", p0, p1));
     }
 
     function log(string memory p0, uint232 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint232)", p0, p1));
     }
 
+    function log(string memory p0, uint232[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint232[])", p0, p1));
+    }
+
     function log(string memory p0, uint240 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint240)", p0, p1));
     }
 
+    function log(string memory p0, uint240[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint240[])", p0, p1));
+    }
+
     function log(string memory p0, uint248 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,uint248)", p0, p1));
+    }
+
+    function log(string memory p0, uint248[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,uint248[])", p0, p1));
     }
 
     // nb: (string,uint256) already covered
@@ -1803,128 +2051,256 @@ library console2 {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes1)", p0, p1));
     }
 
+    function log(string memory p0, bytes1[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes1[])", p0, p1));
+    }
+
     function log(string memory p0, bytes2 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes2)", p0, p1));
+    }
+
+    function log(string memory p0, bytes2[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes2[])", p0, p1));
     }
 
     function log(string memory p0, bytes3 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes3)", p0, p1));
     }
 
+    function log(string memory p0, bytes3[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes3[])", p0, p1));
+    }
+
     function log(string memory p0, bytes4 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes4)", p0, p1));
+    }
+
+    function log(string memory p0, bytes4[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes4[])", p0, p1));
     }
 
     function log(string memory p0, bytes5 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes5)", p0, p1));
     }
 
+    function log(string memory p0, bytes5[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes5[])", p0, p1));
+    }
+
     function log(string memory p0, bytes6 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes6)", p0, p1));
+    }
+
+    function log(string memory p0, bytes6[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes6[])", p0, p1));
     }
 
     function log(string memory p0, bytes7 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes7)", p0, p1));
     }
 
+    function log(string memory p0, bytes7[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes7[])", p0, p1));
+    }
+
     function log(string memory p0, bytes8 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes8)", p0, p1));
+    }
+
+    function log(string memory p0, bytes8[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes8[])", p0, p1));
     }
 
     function log(string memory p0, bytes9 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes9)", p0, p1));
     }
 
+    function log(string memory p0, bytes9[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes9[])", p0, p1));
+    }
+
     function log(string memory p0, bytes10 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes10)", p0, p1));
+    }
+
+    function log(string memory p0, bytes10[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes10[])", p0, p1));
     }
 
     function log(string memory p0, bytes11 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes11)", p0, p1));
     }
 
+    function log(string memory p0, bytes11[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes11[])", p0, p1));
+    }
+
     function log(string memory p0, bytes12 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes12)", p0, p1));
+    }
+
+    function log(string memory p0, bytes12[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes12[])", p0, p1));
     }
 
     function log(string memory p0, bytes13 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes13)", p0, p1));
     }
 
+    function log(string memory p0, bytes13[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes13[])", p0, p1));
+    }
+
     function log(string memory p0, bytes14 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes14)", p0, p1));
+    }
+
+    function log(string memory p0, bytes14[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes14[])", p0, p1));
     }
 
     function log(string memory p0, bytes15 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes15)", p0, p1));
     }
 
+    function log(string memory p0, bytes15[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes15[])", p0, p1));
+    }
+
     function log(string memory p0, bytes16 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes16)", p0, p1));
+    }
+
+    function log(string memory p0, bytes16[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes16[])", p0, p1));
     }
 
     function log(string memory p0, bytes17 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes17)", p0, p1));
     }
 
+    function log(string memory p0, bytes17[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes17[])", p0, p1));
+    }
+
     function log(string memory p0, bytes18 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes18)", p0, p1));
+    }
+
+    function log(string memory p0, bytes18[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes18[])", p0, p1));
     }
 
     function log(string memory p0, bytes19 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes19)", p0, p1));
     }
 
+    function log(string memory p0, bytes19[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes19[])", p0, p1));
+    }
+
     function log(string memory p0, bytes20 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes20)", p0, p1));
+    }
+
+    function log(string memory p0, bytes20[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes20[])", p0, p1));
     }
 
     function log(string memory p0, bytes21 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes21)", p0, p1));
     }
 
+    function log(string memory p0, bytes21[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes21[])", p0, p1));
+    }
+
     function log(string memory p0, bytes22 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes22)", p0, p1));
+    }
+
+    function log(string memory p0, bytes22[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes22[])", p0, p1));
     }
 
     function log(string memory p0, bytes23 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes23)", p0, p1));
     }
 
+    function log(string memory p0, bytes23[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes23[])", p0, p1));
+    }
+
     function log(string memory p0, bytes24 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes24)", p0, p1));
+    }
+
+    function log(string memory p0, bytes24[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes24[])", p0, p1));
     }
 
     function log(string memory p0, bytes25 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes25)", p0, p1));
     }
 
+    function log(string memory p0, bytes25[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes25[])", p0, p1));
+    }
+
     function log(string memory p0, bytes26 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes26)", p0, p1));
+    }
+
+    function log(string memory p0, bytes26[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes26[])", p0, p1));
     }
 
     function log(string memory p0, bytes27 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes27)", p0, p1));
     }
 
+    function log(string memory p0, bytes27[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes27[])", p0, p1));
+    }
+
     function log(string memory p0, bytes28 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes28)", p0, p1));
+    }
+
+    function log(string memory p0, bytes28[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes28[])", p0, p1));
     }
 
     function log(string memory p0, bytes29 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes29)", p0, p1));
     }
 
+    function log(string memory p0, bytes29[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes29[])", p0, p1));
+    }
+
     function log(string memory p0, bytes30 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes30)", p0, p1));
+    }
+
+    function log(string memory p0, bytes30[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes30[])", p0, p1));
     }
 
     function log(string memory p0, bytes31 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes31)", p0, p1));
     }
 
+    function log(string memory p0, bytes31[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes31[])", p0, p1));
+    }
+
     function log(string memory p0, bytes32 p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes32)", p0, p1));
+    }
+
+    function log(string memory p0, bytes32[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes32[])", p0, p1));
     }
 
     /*//////////////////////////////////////////////////////////////////////////
@@ -1937,11 +2313,19 @@ library console2 {
         _sendLogPayload(abi.encodeWithSignature("log(string,address)", p0, p1));
     }
 
+    function log(string memory p0, address payable[] memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,address[])", p0, p1));
+    }
+
     /*//////////////////////////////////////////////////////////////////////////
                                     (STRING,BYTES)
     //////////////////////////////////////////////////////////////////////////*/
 
     function log(string memory p0, bytes memory p1) internal view {
+        _sendLogPayload(abi.encodeWithSignature("log(string,bytes)", p0, p1));
+    }
+
+    function log(string memory p0, bytes[] memory p1) internal view {
         _sendLogPayload(abi.encodeWithSignature("log(string,bytes)", p0, p1));
     }
 }
