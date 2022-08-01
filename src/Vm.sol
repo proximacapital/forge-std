@@ -134,6 +134,9 @@ interface Vm {
     function toString(bool) external returns(string memory);
     function toString(uint256) external returns(string memory);
     function toString(int256) external returns(string memory);
+    function parseJson(string calldata, string calldata) external returns (bytes memory);
+    function parseJson(string calldata) external returns (bytes memory);
+    function writeJson(string[] calldata, string[] calldata, string calldata, bool) external;
     // Record all the transaction logs
     function recordLogs() external;
     // Gets all the recorded logs, () => (logs)
